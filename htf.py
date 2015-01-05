@@ -6,7 +6,7 @@ import re
 import collections
 import contextlib
 import logging
-from dvivf import OpcodeCommandsMachine, VFTranslator
+from dvilike import OpcodeCommandsMachine, VFProcessor
 
 
 def parse_map(map_file):
@@ -454,7 +454,7 @@ file = 'DroidSerif-Regular-ot1.vf'
 
 with open(file, 'rb') as f:
     machine = VFtoHTF()
-    for x in VFTranslator(f):
+    for x in VFProcessor(f):
         print(x)
         machine(x)
     print(machine.chars)
