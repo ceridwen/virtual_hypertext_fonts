@@ -380,6 +380,18 @@ class VFtoHTF(OpcodeCommandsMachine):
         pass
 
 
+if __name__ == '__main__':
+    file = 'DroidSerif-Regular-ot1.vf'
+    # file = 'extending_hardys_proof.dvi'
+
+    with open(file, 'rb') as f:
+        machine = VFtoHTF()
+        for x in VFProcessor(f):
+            print(x)
+            machine(x)
+        print(machine.chars)
+
+
 # # Command line handler
 # if __name__ == '__main__':
 #     import argparse
@@ -446,15 +458,3 @@ class VFtoHTF(OpcodeCommandsMachine):
     # if not overwrite and os.path.exists(name):
     #     print("Didn't overwrite " + name)
     #     return
-
-
-
-file = 'DroidSerif-Regular-ot1.vf'
-# file = 'extending_hardys_proof.dvi'
-
-with open(file, 'rb') as f:
-    machine = VFtoHTF()
-    for x in VFProcessor(f):
-        print(x)
-        machine(x)
-    print(machine.chars)
