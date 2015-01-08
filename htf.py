@@ -130,7 +130,7 @@ def write_htf(chars, tex_name, htf):
             elif type(chars[i].str) == string and len(chars[i].str) == 1:
                 htf.write(chars[i].str + " '' " + str(i) + " " + chars[i].name + "\n")
             elif type(chars[i].str) == int and chars[i].str > 0:
-                htf.write("'&#" + str(hex(chars[i].str)).lstrip("0") + ";' '' " + str(i) + " " + chars[i].name + "\n")
+                htf.write("'&#" + hex(chars[i].str).lstrip("0") + ";' '' " + str(i) + " " + chars[i].name + "\n")
             else:
                 logging.error('The output routine write_htf encountered a bad character, probably because of malformed input.')
         else:
