@@ -71,3 +71,7 @@ package (what you'd call with \usepackage{} in LaTeX) and the TeX
 names of the fonts in the package to generate a LaTeX file that when
 compiled with htlatex will test all the glyphs included in the font
 package.
+
+## License
+
+MIT.
